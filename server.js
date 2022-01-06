@@ -44,14 +44,14 @@ io.on("connection", socket => {
 
         if (!usersOnRoom[roomId].includes(userId)) {
             usersOnRoom[roomId].push(userId)
-
-
+            console.log('connected')
+            console.log(usersOnRoom)
             socket.to(roomId).emit('user-connected', userId)
         }
 
         socket.on('disconnect', () => {
             usersOnRoom[roomId] = usersOnRoom[roomId].filter(e => e !== userId);
-
+            console.log(usersOnRoom)
             socket.to(roomId).emit('user-disconnected', userId)
         })
     })
@@ -59,10 +59,10 @@ io.on("connection", socket => {
     socket.on('leave-room', (roomId, userId) => {
         if (usersOnRoom[roomId]) {
             usersOnRoom[roomId] = usersOnRoom[roomId].filter(e => e !== userId);
-
+            console.log(usersOnRoom, roomId, userId, "nag leave ako")
             socket.to(roomId).emit('user-disconnected', userId)
         } else {
-
+            console.log("No room with that ID!");
         }
     })
 
@@ -76,4 +76,4 @@ if (process.env.NODE_ENV === 'production') {
     })
 }
 
-server.listen(PORT, () => 
+server.listen(PORT, () => console.log(`Listening on port ${PORT}`));
