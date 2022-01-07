@@ -6,7 +6,7 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    beforeEnter: () => location.replace('/about')
+    beforeEnter: () => location.replace('/login')
   },
   {
     path: '/login',

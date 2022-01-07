@@ -45,7 +45,7 @@
                   v-bind="attrs"
                   v-on="on"
                 >
-                  New Item
+                  New Department
                 </v-btn>
               </template>
               <v-card>
@@ -60,7 +60,7 @@
                         <v-form ref="form" @submit.prevent="save">
                           <v-text-field
                             v-model="editedItem.title"
-                            label="Team name"
+                            label="Department Name"
                             :rules="requiredRules"
                           ></v-text-field>
                           <v-autocomplete
@@ -287,7 +287,7 @@ export default {
       loading: "getLoading",
     }),
     formTitle() {
-      return this.editedIndex === -1 ? "New Item" : "Edit Item";
+      return this.editedIndex === -1 ? "New Department" : "Edit Department";
     },
   },
 

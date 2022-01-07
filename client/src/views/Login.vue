@@ -3,10 +3,10 @@
     <v-row class="d-flex">
       <v-col style="height: 105vh" class="deep-purple" cols="4" lg="3">
         <router-link
-          to="/"
+          to="/about"
           style="font-weight: 600; font-size: 1.2rem"
           class="white--text pa-5 d-block"
-          >WorkApp
+          >About
         </router-link>
         <div class="d-flex flex- align-center pb-10" style="height: 100%">
           <div
