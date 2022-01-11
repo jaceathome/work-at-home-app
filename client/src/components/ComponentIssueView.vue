@@ -174,7 +174,7 @@ export default {
         this.setLoading();
         const storageRef = db.storage().ref();
         storageRef
-          .child(`issues/${folderName}/${fileName}`)
+          .child(`comments/${folderName}/${fileName}`)
           .getDownloadURL()
           .then((url) => {
             this.setLoading();
